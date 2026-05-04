@@ -1,0 +1,504 @@
+/* Enhanced UI Styles for Accex Extension */
+
+/* Notification System */
+.notification {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-left: 4px solid currentColor;
+  backdrop-filter: blur(10px);
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.notification-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.notification-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.notification-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notification-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Result Cards */
+.violation-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.violation-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.violation-item.critical {
+  border-left: 4px solid #dc3545;
+}
+
+.violation-item.serious {
+  border-left: 4px solid #fd7e14;
+}
+
+.violation-item.moderate {
+  border-left: 4px solid #ffc107;
+}
+
+.violation-item.minor {
+  border-left: 4px solid #17a2b8;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.result-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.impact-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.result-count {
+  background: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.result-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.result-actions button {
+  padding: 6px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.result-actions button:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+.highlight-btn {
+  background: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+}
+
+.highlight-btn:hover {
+  background: #0056b3 !important;
+  border-color: #0056b3 !important;
+}
+
+.result-content {
+  padding: 16px;
+  cursor: pointer;
+}
+
+.result-content:hover {
+  background: #f8f9fa;
+}
+
+.result-title {
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.result-help {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.help-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+/* Expandable Details */
+.violation-details {
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.violation-details.collapsed {
+  max-height: 0;
+  padding: 0 16px;
+}
+
+.violation-details.expanded {
+  max-height: 1000px;
+  padding: 16px;
+}
+
+.violation-recommendation {
+  margin-bottom: 16px;
+}
+
+.recommendation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.recommendation-title {
+  font-weight: 600;
+  color: #495057;
+}
+
+.recommendation-wcag {
+  background: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.recommendation-content {
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.quick-fix-section {
+  background: #e7f3ff;
+  border: 1px solid #b8daff;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.quick-fix-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quick-fix-title {
+  font-weight: 600;
+  color: #0056b3;
+}
+
+.copy-code-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.copy-code-btn:hover {
+  background: #0056b3;
+}
+
+.copy-code-btn.copied {
+  background: #28a745;
+}
+
+.fix-code {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 8px 0;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+.fix-instructions {
+  font-size: 12px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Affected Elements */
+.affected-elements h4 {
+  color: #495057;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.elements-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.element-preview {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+.element-selector {
+  background: #f8f9fa;
+  color: #e83e8c;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.element-html {
+  color: #6c757d;
+  font-size: 11px;
+  margin-top: 4px;
+  font-family: monospace;
+}
+
+.more-elements {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Bulk Actions */
+.bulk-actions {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.bulk-actions-header h4 {
+  margin: 0 0 12px 0;
+  color: #495057;
+  font-size: 14px;
+}
+
+.bulk-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bulk-buttons button {
+  padding: 8px 12px;
+  border: 1px solid #6c757d;
+  border-radius: 6px;
+  background: white;
+  color: #6c757d;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bulk-buttons button:hover {
+  background: #6c757d;
+  color: white;
+}
+
+/* Enhanced Loading Screen */
+.loading-progress {
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 4px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 12px;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Button Animations */
+.scanning .btn-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.processing {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Error Messages Enhancement */
+.error-message {
+  text-align: center;
+  padding: 20px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.error-actions button {
+  padding: 8px 16px;
+  border: 1px solid #6c757d;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-btn {
+  background: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+}
+
+.help-btn {
+  background: #17a2b8 !important;
+  color: white !important;
+  border-color: #17a2b8 !important;
+}
+
+/* Dark Mode Support */
+.dark-theme .violation-item {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-theme .result-header {
+  background: #1a202c;
+  border-color: #4a5568;
+}
+
+.dark-theme .violation-details {
+  background: #1a202c;
+  border-color: #4a5568;
+}
+
+.dark-theme .quick-fix-section {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .result-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .result-actions {
+    justify-content: center;
+  }
+
+  .bulk-buttons {
+    justify-content: center;
+  }
+}

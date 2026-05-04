@@ -1,0 +1,184 @@
+/* Enhanced Accessibility Tooltip Styles */
+
+.a11y-highlight {
+  position: relative !important;
+}
+
+.a11y-tooltip {
+  position: absolute !important;
+  top: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-100%) !important;
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  line-height: 1.4 !important;
+  max-width: 300px !important;
+  min-width: 200px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  z-index: 10000 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s, visibility 0.2s !important;
+  pointer-events: auto !important;
+}
+
+.a11y-highlight:hover .a11y-tooltip {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.a11y-tooltip::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border: 6px solid transparent !important;
+  border-top-color: #1a1a1a !important;
+}
+
+.a11y-tooltip-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.a11y-tooltip-header strong {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+.a11y-tooltip-wcag {
+  background: #007acc !important;
+  color: #ffffff !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+}
+
+.a11y-tooltip-content {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+.a11y-tooltip-content p {
+  margin: 0 0 8px 0 !important;
+  color: #e0e0e0 !important;
+}
+
+.a11y-tooltip-fix {
+  margin-top: 8px !important;
+  padding-top: 8px !important;
+  border-top: 1px solid #333 !important;
+}
+
+.a11y-tooltip-fix strong {
+  color: #ffffff !important;
+  font-size: 11px !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+.a11y-tooltip-fix code {
+  display: block !important;
+  background: #2d2d2d !important;
+  color: #f8f8f8 !important;
+  padding: 6px 8px !important;
+  border-radius: 4px !important;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace !important;
+  font-size: 11px !important;
+  margin: 4px 0 !important;
+  word-break: break-all !important;
+}
+
+.a11y-copy-fix {
+  background: #007acc !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+  margin-top: 4px !important;
+}
+
+.a11y-copy-fix:hover {
+  background: #005a99 !important;
+}
+
+.a11y-copy-fix:active {
+  background: #004080 !important;
+}
+
+/* Severity-based highlight colors */
+.a11y-highlight[data-accex-violation="critical"] {
+  outline-color: #dc3545 !important;
+  box-shadow: 0 0 0 1px #dc3545 !important;
+}
+
+.a11y-highlight[data-accex-violation="serious"] {
+  outline-color: #fd7e14 !important;
+  box-shadow: 0 0 0 1px #fd7e14 !important;
+}
+
+.a11y-highlight[data-accex-violation="moderate"] {
+  outline-color: #ffc107 !important;
+  box-shadow: 0 0 0 1px #ffc107 !important;
+}
+
+.a11y-highlight[data-accex-violation="minor"] {
+  outline-color: #17a2b8 !important;
+  box-shadow: 0 0 0 1px #17a2b8 !important;
+}
+
+/* Responsive tooltip positioning */
+@media (max-width: 768px) {
+  .a11y-tooltip {
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    right: 20px !important;
+    transform: none !important;
+    max-width: none !important;
+  }
+
+  .a11y-tooltip::after {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .a11y-tooltip {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+  }
+
+  .a11y-tooltip-wcag {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .a11y-tooltip {
+    transition: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.a11y-copy-fix:focus {
+  outline: 2px solid #ffffff !important;
+  outline-offset: 2px !important;
+}

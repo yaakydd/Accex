@@ -1,0 +1,458 @@
+/* Accex Accessibility Navigator - Injected CSS Styles */
+/* This file contains the complete styling for the floating navigator UI */
+
+.accex-navigator {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+  color: white !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 14px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(30, 58, 138, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  z-index: 2147483647 !important; /* Maximum z-index */
+  min-width: 320px !important;
+  max-width: 400px !important;
+  border: 2px solid #3b82f6 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(8px) !important;
+  animation: accex-slide-in 0.4s ease-out !important;
+}
+
+@keyframes accex-slide-in {
+  from {
+    transform: translateX(100%) translateY(20px) !important;
+    opacity: 0 !important;
+  }
+  to {
+    transform: translateX(0) translateY(0) !important;
+    opacity: 1 !important;
+  }
+}
+
+.accex-navigator:focus-within {
+  outline: 3px solid #fbbf24 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(30, 58, 138, 0.4),
+    0 0 0 3px rgba(251, 191, 36, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.accex-navigator-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+.accex-navigator-title {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: #fbbf24 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.accex-navigator-close {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 2px solid transparent !important;
+  color: #fbbf24 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.accex-navigator-close:hover {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: #ef4444 !important;
+  transform: scale(1.05) !important;
+}
+
+.accex-navigator-close:focus {
+  outline: 2px solid #fbbf24 !important;
+  outline-offset: 2px !important;
+  background: rgba(239, 68, 68, 0.2) !important;
+}
+
+.accex-navigator-counter {
+  text-align: center !important;
+  margin-bottom: 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #e2e8f0 !important;
+  background: rgba(59, 130, 246, 0.1) !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+}
+
+.accex-navigator-current {
+  color: #fbbf24 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+}
+
+.accex-navigator-controls {
+  display: flex !important;
+  gap: 10px !important;
+  margin-bottom: 16px !important;
+}
+
+.accex-navigator-btn {
+  flex: 1 !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+  border: 2px solid transparent !important;
+  color: white !important;
+  padding: 12px 16px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.accex-navigator-btn::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  ) !important;
+  transition: left 0.5s !important;
+}
+
+.accex-navigator-btn:hover::before {
+  left: 100% !important;
+}
+
+.accex-navigator-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  border-color: rgba(251, 191, 36, 0.3) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+}
+
+.accex-navigator-btn:focus {
+  outline: 2px solid #fbbf24 !important;
+  outline-offset: 2px !important;
+  border-color: #fbbf24 !important;
+}
+
+.accex-navigator-btn:active {
+  transform: translateY(0) !important;
+}
+
+.accex-navigator-btn:disabled {
+  background: #64748b !important;
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.accex-navigator-btn:disabled::before {
+  display: none !important;
+}
+
+.accex-navigator-issue {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border: 2px solid rgba(59, 130, 246, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  margin-bottom: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.accex-navigator-issue:hover {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.accex-navigator-issue-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 10px !important;
+}
+
+.accex-navigator-severity {
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border: 1px solid transparent !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.accex-navigator-severity.critical {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+  color: white !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3) !important;
+}
+
+.accex-navigator-severity.serious {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  color: white !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.3) !important;
+}
+
+.accex-navigator-severity.moderate {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  color: white !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 2px 4px rgba(217, 119, 6, 0.3) !important;
+}
+
+.accex-navigator-severity.minor {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: white !important;
+  border-color: #0ea5e9 !important;
+  box-shadow: 0 2px 4px rgba(2, 132, 199, 0.3) !important;
+}
+
+.accex-navigator-issue-id {
+  font-family: "Menlo", "Monaco", "Courier New", monospace !important;
+  font-size: 11px !important;
+  color: #94a3b8 !important;
+  background: rgba(148, 163, 184, 0.1) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+}
+
+.accex-navigator-description {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 12px !important;
+  color: #f1f5f9 !important;
+  font-weight: 500 !important;
+}
+
+.accex-navigator-element {
+  font-family: "Menlo", "Monaco", "Courier New", monospace !important;
+  font-size: 12px !important;
+  color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.1) !important;
+  padding: 8px 10px !important;
+  border-radius: 6px !important;
+  margin-bottom: 12px !important;
+  border: 1px solid rgba(251, 191, 36, 0.2) !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+}
+
+.accex-navigator-actions {
+  display: flex !important;
+  gap: 8px !important;
+}
+
+.accex-navigator-action {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: #1e3a8a !important;
+  border: 2px solid transparent !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.accex-navigator-action:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  border-color: rgba(30, 58, 138, 0.3) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 8px rgba(251, 191, 36, 0.4) !important;
+}
+
+.accex-navigator-action:focus {
+  outline: 2px solid #1e3a8a !important;
+  outline-offset: 2px !important;
+  border-color: #1e3a8a !important;
+}
+
+.accex-navigator-action:active {
+  transform: translateY(0) !important;
+}
+
+.accex-keyboard-hint {
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+  text-align: center !important;
+  margin-top: 12px !important;
+  padding-top: 12px !important;
+  border-top: 1px solid rgba(59, 130, 246, 0.2) !important;
+  font-style: italic !important;
+  line-height: 1.4 !important;
+}
+
+/* Temporary highlight animation for focused elements */
+.accex-temp-highlight {
+  outline: 4px solid #fbbf24 !important;
+  outline-offset: 4px !important;
+  background: rgba(251, 191, 36, 0.15) !important;
+  animation: accex-pulse-highlight 3s ease-in-out !important;
+  transition: all 0.3s ease !important;
+}
+
+@keyframes accex-pulse-highlight {
+  0%,
+  100% {
+    outline-width: 4px !important;
+    outline-color: #fbbf24 !important;
+    background: rgba(251, 191, 36, 0.15) !important;
+    transform: scale(1) !important;
+  }
+  25% {
+    outline-width: 6px !important;
+    outline-color: #f59e0b !important;
+    background: rgba(251, 191, 36, 0.25) !important;
+    transform: scale(1.01) !important;
+  }
+  50% {
+    outline-width: 8px !important;
+    outline-color: #fbbf24 !important;
+    background: rgba(251, 191, 36, 0.3) !important;
+    transform: scale(1.02) !important;
+  }
+  75% {
+    outline-width: 6px !important;
+    outline-color: #f59e0b !important;
+    background: rgba(251, 191, 36, 0.25) !important;
+    transform: scale(1.01) !important;
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .accex-navigator {
+    bottom: 10px !important;
+    right: 10px !important;
+    left: 10px !important;
+    min-width: auto !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-height: 600px) {
+  .accex-navigator {
+    bottom: 5px !important;
+    padding: 16px !important;
+  }
+
+  .accex-navigator-header {
+    margin-bottom: 12px !important;
+  }
+
+  .accex-navigator-counter {
+    margin-bottom: 12px !important;
+  }
+
+  .accex-navigator-controls {
+    margin-bottom: 12px !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .accex-navigator {
+    border-width: 3px !important;
+    box-shadow: 0 0 0 2px #000000 !important;
+  }
+
+  .accex-navigator-btn {
+    border-width: 2px !important;
+    border-color: #ffffff !important;
+  }
+
+  .accex-navigator-severity.critical {
+    border-width: 2px !important;
+  }
+
+  .accex-navigator-severity.serious {
+    border-width: 2px !important;
+  }
+
+  .accex-navigator-severity.moderate {
+    border-width: 2px !important;
+  }
+
+  .accex-navigator-severity.minor {
+    border-width: 2px !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .accex-navigator {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .accex-navigator-btn {
+    transition: none !important;
+  }
+
+  .accex-navigator-btn::before {
+    display: none !important;
+  }
+
+  .accex-navigator-action {
+    transition: none !important;
+  }
+
+  .accex-temp-highlight {
+    animation: none !important;
+  }
+
+  @keyframes accex-pulse-highlight {
+    0%,
+    100% {
+      outline-width: 4px !important;
+      outline-color: #fbbf24 !important;
+      background: rgba(251, 191, 36, 0.3) !important;
+    }
+  }
+}
+
+/* Focus management for keyboard navigation */
+.accex-navigator *:focus {
+  outline: 2px solid #fbbf24 !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure navigator stays on top of everything */
+.accex-navigator,
+.accex-navigator * {
+  z-index: 2147483647 !important;
+}

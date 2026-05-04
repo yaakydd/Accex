@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accex - Accessibility Scanner</title>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+    <link rel="stylesheet" type="text/css" href="../enhanced-ui.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Fixed Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Accex</h1>
+          <p class="app-tagline">Making the web accessible for everyone</p>
+        </div>
+        <div id="scan-status" class="scan-status hidden">
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <span id="progress-text" class="progress-text"
+              >Initializing...</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Scrollable Main Content -->
+      <main class="app-main">
+        <!-- Welcome Section -->
+        <div class="welcome-section" id="welcome-section">
+          <div class="welcome-content">
+            <div class="welcome-icon">🔍</div>
+            <h3>Ready to Scan</h3>
+            <p>
+              Click the button below to analyze this page for accessibility
+              issues and get detailed recommendations.
+            </p>
+          </div>
+        </div>
+
+        <div class="scan-section">
+          <button id="scan-btn" class="primary-btn">
+            <span class="btn-text">Scan Page</span>
+          </button>
+          <button id="scan-again-btn" class="primary-btn hidden">
+            <span class="btn-text">Scan Again</span>
+          </button>
+        </div>
+
+        <div class="summary-container hidden" id="summary-container">
+          <div class="summary-header">
+            <h2>Scan Results</h2>
+            <div class="summary-controls">
+              <!-- <button
+                id="auto-fix-btn"
+                class="auto-fix-btn"
+                title="Apply automatic fixes">
+                Quick Fix
+              </button> -->
+            </div>
+          </div>
+          <div class="summary-grid">
+            <div class="summary-item critical" data-severity="critical">
+              <span class="count" id="critical-count">0</span>
+              <span class="label">Critical</span>
+              <span class="severity-indicator">HIGH</span>
+            </div>
+            <div class="summary-item serious" data-severity="serious">
+              <span class="count" id="serious-count">0</span>
+              <span class="label">Serious</span>
+              <span class="severity-indicator">MED</span>
+            </div>
+            <div class="summary-item moderate" data-severity="moderate">
+              <span class="count" id="moderate-count">0</span>
+              <span class="label">Moderate</span>
+              <span class="severity-indicator">LOW</span>
+            </div>
+            <div class="summary-item minor" data-severity="minor">
+              <span class="count" id="minor-count">0</span>
+              <span class="label">Minor</span>
+              <span class="severity-indicator">INFO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-controls hidden" id="filter-controls">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="color-contrast">
+              Contrast
+            </button>
+            <button class="filter-tab" data-filter="images">Images</button>
+            <button class="filter-tab" data-filter="keyboard">Keyboard</button>
+            <button class="filter-tab" data-filter="headings">Headings</button>
+            <button class="filter-tab" data-filter="structure">
+              Structure
+            </button>
+          </div>
+        </div>
+
+        <div class="results-container" id="results-container">
+          <div class="results-header hidden" id="results-header">
+            <h2>Detailed Results</h2>
+            <div class="results-actions">
+              <button id="collapse-all-btn" class="action-btn">
+                Collapse All
+              </button>
+              <button id="expand-all-btn" class="action-btn">Expand All</button>
+            </div>
+          </div>
+          <div id="results-list" class="results-list"></div>
+        </div>
+
+        <div id="loading" class="loading-section hidden">
+          <div class="loading-spinner"></div>
+          <p>Scanning accessibility...</p>
+        </div>
+
+        <div id="error" class="error-section hidden">
+          <div class="error-icon">⚠️</div>
+          <div id="error-message" class="error-message">An error occurred</div>
+          <button id="retry-btn" class="retry-btn">Try Again</button>
+        </div>
+
+        <div id="recommendations-panel" class="recommendations-panel hidden">
+          <div class="panel-header">
+            <h3>Smart Recommendations</h3>
+            <button id="close-recommendations" class="close-btn">Close</button>
+          </div>
+          <div id="recommendations-content" class="recommendations-content">
+            <!-- Dynamic content will be inserted here -->
+          </div>
+        </div>
+      </main>
+
+      <!-- Fixed Footer -->
+      <footer class="app-footer">
+        <div class="footer-actions">
+          <button id="view-summary-btn" class="footer-btn hidden">
+            <span class="btn-icon">📊</span>
+            <span class="btn-text">Summary</span>
+          </button>
+          <button id="clear-highlights-btn" class="footer-btn hidden">
+            <span class="btn-icon">✖️</span>
+            <span class="btn-text">Close</span>
+          </button>
+          <button id="highlight-issues-btn" class="footer-btn hidden">
+            <span class="btn-icon">🧭</span>
+            <span class="btn-text">Navigator</span>
+          </button>
+        </div>
+        <div class="footer-info hidden" id="footer-info">
+          <span id="page-url" class="page-url">Current page</span>
+          <span id="last-scan-time" class="last-scan-time">Never scanned</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Load robust popup script -->
+    <script src="../popup-robust.js"></script>
+  </body>
+</html>

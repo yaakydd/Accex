@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessibility Test Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .low-contrast {
+        color: #999;
+        background: #eee;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      .missing-alt {
+        width: 200px;
+        height: 100px;
+        background: #ddd;
+        margin: 10px 0;
+      }
+      .unlabeled-input {
+        margin: 10px 0;
+        padding: 5px;
+      }
+      .broken-heading {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Accessibility Test Page</h1>
+
+      <!-- Color contrast issue (critical) -->
+      <div class="low-contrast">
+        This text has poor color contrast and will be flagged as critical.
+      </div>
+
+      <!-- Missing alt text (serious) -->
+      <img src="placeholder.jpg" class="missing-alt" />
+
+      <!-- Unlabeled form input (moderate) -->
+      <input
+        type="text"
+        class="unlabeled-input"
+        placeholder="Unlabeled input field" />
+
+      <!-- Improper heading structure (minor) -->
+      <div class="broken-heading">This should be a proper heading tag</div>
+
+      <!-- Button without accessible name -->
+      <button onclick="alert('clicked')">❌</button>
+
+      <!-- Link without descriptive text -->
+      <a href="#">Click here</a>
+
+      <!-- Missing form labels -->
+      <form>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Submit</button>
+      </form>
+
+      <p>
+        This page contains several accessibility issues that should be
+        highlighted when you run the Accex scanner:
+      </p>
+      <ul>
+        <li>Poor color contrast (critical - red outline)</li>
+        <li>Missing alt text (serious - orange outline)</li>
+        <li>Unlabeled form controls (moderate - yellow outline)</li>
+        <li>Improper heading structure (minor - blue outline)</li>
+      </ul>
+
+      <p>
+        Use the extension to scan this page and see the highlighting in action!
+      </p>
+    </div>
+  </body>
+</html>
