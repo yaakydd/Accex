@@ -315,6 +315,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🎨 Basic element highlighting
 
 ## 🚀 Roadmap
+Will be updated soon
 
 ### Upcoming Features
 
